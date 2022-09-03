@@ -1,6 +1,6 @@
 import React from "react";
 import { App } from "../src";
-const SecondPage=()=>
+const Createscheduler=()=>
 {
     return(
       <>
@@ -12,4 +12,4 @@ const SecondPage=()=>
     )
     
 }
-export default SecondPage
+export default Createscheduler

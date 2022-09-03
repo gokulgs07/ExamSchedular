@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import GlobalStyle from "./Globalstyles";
 import { Font } from "../font";
+import formdata from "../Dataforcreatesche";
 //text component ...............................................................
 export const TextComponent = ({
   label,
@@ -24,6 +25,7 @@ export const Box = ({ children, style }) => {
 };
 //INPUT COMPO........................................................................
 export const InputComponent = (props) => {
+
   return (
     <div
       style={{
@@ -109,7 +111,7 @@ const Logo = () => {
 const Vector = () => {
   return (
     <div
-      style={{
+      style={{ 
         display: "flex",
         color: "white",
         padding: "0px 13px 0px 600px",
@@ -269,6 +271,8 @@ export const Backbutton = () => {
 };
 //Branch..............................
 export const Branch = () => {
+  // formdata.branchanddep.map((e)=>{console.log(e.branch)});
+  
   return (
     <div>
       <Font />
@@ -294,8 +298,13 @@ export const Branch = () => {
           height: "56px",
         }}
       >
-        <option value="">BE</option>
-        <option value="">B.TECH</option>
+       {/* {formdata.branchanddep.map((e) => (<option value="">{e.branch}</option>))
+       }
+       */}
+       
+        
+        {/* <option value="">BE</option>
+        <option value="">B.TECH</option> */}
       </select>
     </div>
   );
@@ -303,6 +312,8 @@ export const Branch = () => {
 
 //Department.......................................
 export const Department = () => {
+
+formdata.branchanddep.map((e)=>{e.deps.map((ele)=>{console.log(ele)})})
   return (
     <div>
       <Font />
@@ -331,10 +342,8 @@ export const Department = () => {
           height: "56px",
         }}
       >
-        <option value="">EEE</option>
-        <option value="">ECE</option>
-        <option value="">CSE</option>
-        <option value="">MECH</option>
+        {formdata.branchanddep.map((e)=>(e.deps.map((ele)=>(<option value="">{ele}</option>))))}
+       
       </select>
     </div>
   );
@@ -412,10 +421,8 @@ export const Semester = () => {
           alignItems: "center",
           //marginLeft:"104px",
           width: "300px",
-
           height: "51px",
           color: "#A5A3A9",
-
           padding: "22px 114px -3px 2px",
         }}
       />
